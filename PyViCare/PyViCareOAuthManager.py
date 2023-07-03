@@ -63,7 +63,7 @@ class ViCareOAuthManager(AbstractViCareOAuthManager):
         header = {'Content-Type': 'application/x-www-form-urlencoded'}
         response = requests.post(
             authorization_url, headers=header, auth=(username, password), allow_redirects=False)
-
+        print(response)
         if response.status_code == 401:
             raise PyViCareInvalidConfigurationError(response.json())
 
